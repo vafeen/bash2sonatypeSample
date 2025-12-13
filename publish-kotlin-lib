@@ -3,7 +3,7 @@
 export PROJECT_NAME="Test project"
 export GROUP_ID="io.github.vafeen"
 export ARTIFACT_MODULE_NAME="test-publish"
-export VERSION="1.0.0"
+export VERSION="1.0.1"
 
 export SOURCES_PACKAGE="ru.vafeen.testpublish"
 export PROJECT_DESCRIPTION="Test project"
