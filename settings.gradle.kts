@@ -20,6 +20,5 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "My Application"
-include(":app")
 include(":test-publish")
 include(":test-publish-android")
