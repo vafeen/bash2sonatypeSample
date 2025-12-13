@@ -18,31 +18,37 @@ jobs:
   publish:
     name: Release build and publish
     runs-on: ubuntu-latest
+
+    env:
+      SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
+      SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
+      GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
+      GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
+      GPG_KEY_CONTENTS: ${{ secrets.GPG_KEY_CONTENTS }}
+
     steps:
       - name: Check out code
         uses: actions/checkout@v4
+
       - name: Set up JDK 21
         uses: actions/setup-java@v4
         with:
           distribution: 'zulu'
           java-version: 21
-      - name: Publish to MavenCentral
+
+      - name: Build
         run: |
           chmod +x ./gradlew
-          
           ./gradlew build
-          
-          git clone git@github.com:vafeen/bash2sonatype.git
-          
-          ./bash2sonatype/scripts/setup 
-          
+
+      - name: Clone bash2sonatype
+        run: |
+          git clone https://github.com/vafeen/bash2sonatype.git
+
+      - name: Setup bash2sonatype
+        run: |
+          ./bash2sonatype/scripts/setup
           ./publish-kotlin-lib
-        env:
-          SONATYPE_USERNAME: ${{ secrets.SONATYPE_USERNAME }}
-          SONATYPE_PASSWORD: ${{ secrets.SONATYPE_PASSWORD }}
-          GPG_KEY_ID: ${{ secrets.GPG_KEY_ID }}
-          GPG_PASSPHRASE: ${{ secrets.GPG_PASSPHRASE }}
-          GPG_KEY_CONTENTS: ${{ secrets.GPG_KEY_CONTENTS }}
 #  release:
 #    #    needs: [ publish ]
 #    runs-on: ubuntu-latest
