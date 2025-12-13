@@ -21,4 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "My Application"
 include(":app")
-include(":TestPublish")
+include(":test-publish")
+include(":android_library")
