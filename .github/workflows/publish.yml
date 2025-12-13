@@ -30,11 +30,11 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v4
 
-      - name: Clone bash2sonatype
+      - name: Bash2sonatype clone
         run: |
           git clone https://github.com/vafeen/bash2sonatype.git
 
-      - name: Setup bash2sonatype
+      - name: Bash2sonatype setup
         run: |
           ./bash2sonatype/scripts/setup
 
@@ -43,7 +43,7 @@ jobs:
           chmod +x ./gradlew
           ./gradlew build
 
-      - name: Publish
+      - name: Bash2sonatype publish
         run: |
           ./publish-kotlin-lib
 #  release:
