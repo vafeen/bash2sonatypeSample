@@ -22,4 +22,4 @@ export ASSEMBLED_FILE="$ARTIFACT_MODULE_NAME/build/outputs/aar/$ARTIFACT_MODULE_
 
 source ./.sensitive # or use other env variables
 
-./bash2sonatype/scripts/all_process
+./bash2sonatype/scripts/all_process false
