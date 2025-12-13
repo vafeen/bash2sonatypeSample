@@ -2,7 +2,7 @@ plugins {
     id("java-library")
     alias(libs.plugins.jetbrains.kotlin.jvm)
 }
-version = "1.0.0"
+version = "1.0.1"
 group = "io.github.vafeen"
 java {
     sourceCompatibility = JavaVersion.VERSION_11
