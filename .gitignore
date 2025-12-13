@@ -11,4 +11,3 @@ local.properties
 *.asc
 *.kotlin
 *.sensitive
-/bash2sonatype
