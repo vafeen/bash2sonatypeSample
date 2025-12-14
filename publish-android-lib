@@ -1,8 +1,6 @@
 #!/bin/bash 
 
 export ARTIFACT_MODULE_NAME="test-publish-android"
-export SOURCE_CODE_PATH="$ARTIFACT_MODULE_NAME/src/main/java" # or kotlin
-export ASSEMBLED_FILE="$ARTIFACT_MODULE_NAME/build/outputs/aar/$ARTIFACT_MODULE_NAME-release.aar"
 
 export PROJECT_NAME="Test project"
 export PROJECT_DESCRIPTION="Test project"
@@ -17,6 +15,8 @@ export DEVELOPER_NAME="A"
 export DEVELOPER_EMAIL="666av6@gmail.com"
 export SCM_URL="https://github.com/vafeen/testproject.git"
 
+export SOURCE_CODE_PATH="$ARTIFACT_MODULE_NAME/src/main/java" # or kotlin
+export ASSEMBLED_FILE="$ARTIFACT_MODULE_NAME/build/outputs/aar/$ARTIFACT_MODULE_NAME-release.aar"
 
 source ./.sensitive # or use other env variables
 
