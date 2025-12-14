@@ -3,8 +3,8 @@ name: Publish
 #  release:
 #    types: [released, prereleased]
 on:
+  workflow_dispatch:
   push:
-    workflow_dispatch:
     branch:
       3-workflow
     tags:
